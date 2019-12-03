@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+    color: rgb(107, 12, 12);
+}
+.addbtn{
+
+    text-align: center;
+    font-weight: bold;
+}
+.head{
+    margin-bottom: 20px;
+}
+.container{
+    margin-top: 30px;
+}

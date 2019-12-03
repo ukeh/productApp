@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header display-4">
+    Product List
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover ">
+      <thead>
+        <tr>
+          <th><input type="button" value={{buttonText}} class="btn btn-success" (click)="buttonClick()"></th>
+
+          <th>Product</th>
+          <th>Code</th>
+          <th>Availble</th>
+          <th>Price</th>
+          <th>5 star Rating</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngIf='products && products.length'>
+        <tr *ngFor="let product of products">
+          <td><img  *ngIf="flag" src={{product.imageUrl}} alt="logo" [title]='product.productName' ></td>
+          <!-- <td><img [src]='product.imageurl' alt=""></td> -->
+          <td>{{product.productName}}</td>
+          <td>{{product.productCode}}</td>
+          <td>{{product.releaseDate}}</td>
+          <td>{{product.price | currency:'INR'}}</td>
+          <td><rating [(ngModel)]="product.starRating" [max]="max" [readonly]="true"></rating></td>
+          <td>
+          <button class="btn btn-success"   (click)="editClick(product._id)">Edit</button>
+          <br>
+          <button class="btn btn-danger"  (click)="deleteClick(product._id)">Delete</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
